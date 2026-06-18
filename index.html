@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mini Apps — by brianpb9</title>
+<style>
+  :root{
+    --bg:#1a0b2e; --panel:#241046; --panel2:#2d1659; --text:#f5f0ff; --muted:#b09fd4;
+    --cyan:#2ee6d6; --magenta:#ff4fd8; --gold:#ffd23f; --green:#38ef7d; --orange:#ff8a3c;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{min-height:100%}
+  body{
+    font-family:ui-rounded,"Segoe UI",system-ui,-apple-system,sans-serif;color:var(--text);
+    background:radial-gradient(900px 500px at 50% -5%,#3a1b6e 0,transparent 60%),linear-gradient(180deg,#1a0b2e,#0d0620);
+    min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;
+  }
+  body::before{
+    content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.18;
+    background:linear-gradient(transparent 0,transparent 38px,rgba(46,230,214,.5) 39px),
+               linear-gradient(90deg,transparent 0,transparent 38px,rgba(255,79,216,.4) 39px);
+    background-size:40px 40px;
+    -webkit-mask-image:linear-gradient(180deg,transparent 40%,#000 100%);
+            mask-image:linear-gradient(180deg,transparent 40%,#000 100%);
+  }
+  .wrap{position:relative;z-index:1;width:min(820px,100%)}
+  h1{font-size:clamp(34px,7vw,52px);font-weight:900;letter-spacing:-1px;line-height:1}
+  .grad{background:linear-gradient(90deg,var(--cyan),var(--magenta),var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .sub{color:var(--muted);margin-top:12px;font-size:16px}
+  .checker{height:14px;border-radius:6px;margin:22px 0;background:conic-gradient(#fff 0 25%,#14081f 0 50%,#fff 0 75%,#14081f 0) 0 0/24px 24px;opacity:.9}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:6px}
+  @media(max-width:600px){.grid{grid-template-columns:1fr}}
+  .card{
+    display:block;text-decoration:none;color:inherit;background:linear-gradient(180deg,var(--panel),var(--panel2));
+    border:1px solid rgba(255,255,255,.08);border-radius:20px;padding:26px;transition:.18s;
+    box-shadow:0 14px 40px rgba(0,0,0,.4)
+  }
+  .card:hover{transform:translateY(-4px);border-color:var(--cyan);box-shadow:0 20px 50px rgba(46,230,214,.25)}
+  .emoji{font-size:42px;line-height:1}
+  .card h2{font-size:24px;font-weight:900;margin:14px 0 8px}
+  .card p{color:var(--muted);font-size:14px;line-height:1.5}
+  .go{display:inline-block;margin-top:16px;font-weight:800;color:var(--gold)}
+  .foot{color:var(--muted);font-size:13px;margin-top:26px;text-align:center}
+  .foot a{color:var(--cyan);text-decoration:none}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Mini <span class="grad">Apps</span></h1>
+    <p class="sub">A little collection of self-contained, single-file web apps. No installs — just click and play.</p>
+    <div class="checker"></div>
+
+    <div class="grid">
+      <a class="card" href="typing-game.html">
+        <div class="emoji">🏎️</div>
+        <h2>Type Racer</h2>
+        <p>A synthwave racing game that teaches you to type faster. The quicker you type, the faster your car drives — chain combos for nitro boosts.</p>
+        <span class="go">Play →</span>
+      </a>
+      <a class="card" href="meeting-action-board.html">
+        <div class="emoji">🗂️</div>
+        <h2>Meeting Action Board</h2>
+        <p>A Kanban board (To Do / In Progress / Done) for tracking action items from meetings.</p>
+        <span class="go">Open →</span>
+      </a>
+    </div>
+
+    <p class="foot">Built with Claude Code · <a href="https://github.com/brianpb9/type-racer">source on GitHub</a></p>
+  </div>
+</body>
+</html>
